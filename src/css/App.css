@@ -6,17 +6,38 @@
   align-items: center;
   flex-direction: column;
   color: white;
-  img {
-    width: 15rem;
+  position: relative; 
+}
+.landingFirst img {
+  width: 15rem;
+}
+.landingFirst p {
+  color: #f59f0a;
+}
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translate(-50%, 0);
   }
-  p {
-    color: #f59f0a;
+  50% {
+    transform: translate(-50%, 1rem); 
   }
 }
-.musicCardsComponents{
+
+.mouse-animation {
+  position: absolute;
+  bottom: 2rem; 
+  left: 50%;     
+  animation: moveUpDown 2s ease-in-out infinite;
+  width: 1rem; 
+  height: 3rem;
+  filter: brightness(0) invert(1);
+}
+
+.musicCardsComponents {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; 
   color: white;
   background-color: #1a1c37;
   height: 100dvh;
