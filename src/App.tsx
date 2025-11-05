@@ -1,111 +1,79 @@
-import { useState } from 'react'
-import './css/App.css'
-import logo from './assets/logo-azul.png'
-import Footer from './Footer.tsx'
-import sobrecargado from './audio/Sobrecargado - sobrecarga de metodos.mp3'
-import seAlejanCositas from './audio/se alejan cositas.mp3'
-import tuhermana from './audio/El Grito del Debugging.wav'
-import tuhermano from './audio/El Pibe DateTime.mp3'
-import tuvieja from './audio/El TimeSpan - Act 17.mp3'
-import tuviejo from './audio/Esta cancion is like This_.mp3'
-import tuabuela from './audio/Fragmentos y señales.mp3'
-import tuabuelo from './audio/Key word this.mp3'
-import tutia from './audio/cancion.mp3'
-import tutio from './audio/20250813_235407.mp3'
-import tuprima from './audio/Act-17-Eduado-Vasquez.mp3'
-import tuprimo from './audio/RPReplay_Final1754544611.mp3'
-import tuhija from './audio/VideoToMp3Converter_20250811015513545.mp3'
-import tuhijo from './audio/sobrecarga.mp3'
-import tumadrina from './audio/Programacion con Tiempo.mp3'
+import { useState } from 'react';
+import './css/App.css';
+import logo from './assets/logo-azul.png';
+import Footer from './Footer.tsx';
+import SongCard from './SongCard.tsx';
+
+import mouseIcon from "./assets/mouse-icon.svg"
+
+import sobrecargado from './audio/Sobrecargado - sobrecarga de metodos.mp3';
+import seAlejanCositas from './audio/se alejan cositas.mp3';
+import elGritoDelDebugging from './audio/El Grito del Debugging.wav';
+import elPibeDateTime from './audio/El Pibe DateTime.mp3';
+import elTimeSpanAct17 from './audio/El TimeSpan - Act 17.mp3';
+import estaCancionIsLikeThis from './audio/Esta cancion is like This_.mp3';
+import fragmentosYSeñales from './audio/Fragmentos y señales.mp3';
+import keyWordThis from './audio/Key word this.mp3';
+import cancion from './audio/cancion.mp3';
+import cancionConFecha from './audio/20250813_235407.mp3';
+import act17EduardoVasquez from './audio/Act-17-Eduado-Vasquez.mp3';
+import rprReplay from './audio/RPReplay_Final1754544611.mp3';
+import videoConverter from './audio/VideoToMp3Converter_20250811015513545.mp3';
+import sobrecarga from './audio/sobrecarga.mp3';
+import programacionConTiempo from './audio/Programacion con Tiempo.mp3';
+
+
+const songs = [
+  { id: 's1', title: 'Sobrecargado', audioSrc: sobrecargado },
+  { id: 's2', title: 'Se alejan cositas', audioSrc: seAlejanCositas },
+  { id: 's3', title: 'El Grito del Debbugin', audioSrc: elGritoDelDebugging },
+  { id: 's4', title: 'El Pibe DateTime', audioSrc: elPibeDateTime },
+  { id: 's5', title: 'Programacion con Tiempo', audioSrc: programacionConTiempo },
+  { id: 's6', title: 'El TimeSpan', audioSrc: elTimeSpanAct17 },
+  { id: 's7', title: 'Esta cancion es like this', audioSrc: estaCancionIsLikeThis },
+  { id: 's8', title: 'Fragmentos y señales', audioSrc: fragmentosYSeñales },
+  { id: 's9', title: 'key word this', audioSrc: keyWordThis },
+  { id: 's10', title: 'Cancion', audioSrc: cancion },
+  { id: 's11', title: 'cancion con fecha', audioSrc: cancionConFecha },
+  { id: 's12', title: 'la de edu', audioSrc: act17EduardoVasquez },
+  { id: 's13', title: 'rpr', audioSrc: rprReplay },
+  { id: 's14', title: 'video coverter', audioSrc: videoConverter },
+  { id: 's15', title: 'sobrecarga', audioSrc: sobrecarga },
+];
 
 function App() {
-
   return (
     <>
-    <main>
-      <section>
-        <div className='landingFirst'>
-          <img src={logo} alt="" />
-          <h1>Proyectos creados por estudiantes</h1>
-          <p>Musica creada por IA, con fines educativos sobre temas de programacion en C#</p>
-        </div>
-      </section>
-      <section className="musicCardsComponents">
-        <h2>Repositorio de canciones</h2>
-      </section>
+      <main>
+        <section>
+          <div className='landingFirst'>
+            <img src={logo} alt="" />
+            <h1>Proyectos creados por estudiantes</h1>
+            <p>Musica creada por IA, con fines educativos sobre temas de programacion en C#</p>
+            <img
+              src={mouseIcon}
+              alt="Scroll para abajo"
+              className="scroll-down-svg"
+            />
+          </div>
+        </section>
+        <section className="musicCardsComponents">
+          <h2>Repositorio de canciones</h2>
+        </section>
 
-      <section className="musicCardsCont">
-        <div className="songCard">
-          <p className="songTitle">Sobrecargado</p>
-          <audio src={sobrecargado} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">Se alejan cositas</p>
-          <audio src={seAlejanCositas} controls/>
-        </div>
-         <div className="songCard">
-          <p className="songTitle">El Grito del Debbugin</p>
-          <audio src={tuhermana} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">El Pibe DateTime</p>
-          <audio src={tuhermano} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">Programacion con Tiempo</p>
-          <audio src={tumadrina} controls/>
-        </div>
-      </section>
-
-      <section className="musicCardsCont">
-        <div className="songCard">
-          <p className="songTitle">El TimeSpan</p>
-          <audio src={tuvieja} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">Esta cancion es like this</p>
-          <audio src={tuviejo} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">Fragmentos y señales</p>
-          <audio src={tuabuela} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">key word this</p>
-          <audio src={tuabuelo} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">Cancion</p>
-          <audio src={tutia} controls/>
-        </div>
-      </section>
-
-       <section className="musicCardsCont">
-        <div className="songCard">
-          <p className="songTitle">cancion con fecha</p>
-          <audio src={tutio} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">la de edu</p>
-          <audio src={tuprima} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">rpr</p>
-          <audio src={tuprimo} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">video coverter</p>
-          <audio src={tuhija} controls/>
-        </div>
-        <div className="songCard">
-          <p className="songTitle">sobrecarga</p>
-          <audio src={tuhijo} controls/>
-        </div>
-      </section>
-    </main>
-    <Footer />
+        <section className="musicCardsCont">
+          {songs.map((song) => (
+            <SongCard
+              key={song.id}
+              title={song.title}
+              audioSrc={song.audioSrc}
+            />
+          ))}
+        </section>
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
