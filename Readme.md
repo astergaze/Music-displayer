@@ -22,3 +22,12 @@ Este proyecto fue construido utilizando las siguientes tecnologías:
 * **[TypeScript](https://www.typescriptlang.org/)**: Superset de JavaScript que añade tipos estáticos.
 * **[Vite](https://vitejs.dev/)**: Herramienta de frontend para un desarrollo y *build* extremadamente rápidos.
 * **[CSS Modules](https://github.com/css-modules/css-modules)**: Para estilos locales y componentizados.
+
+---
+
+## Personas encargadas del proyecto
+
+* @astergaze (Thiago Martinez)
+* @lautaroif08 (Lautaro Fortuna)
+* @Shower143 (Joel Ninaja)
+* @benjamin091218 (Benjamin Gonzalez)
