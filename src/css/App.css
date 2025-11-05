@@ -19,5 +19,31 @@
   align-items: center;
   color: white;
   background-color: #1a1c37;
-  height: 100dvh;
+  height: 30dvh;
+}
+
+.musicCardsCont{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #1a1c37;
+ gap: 2rem;
+}
+
+.songCard {
+  display: flex;
+  flex-direction: column; /* texto arriba, audio abajo */
+  align-items: center;
+  background-color: #2a2d55;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   margin: 1rem 0;
+}
+
+.songTitle {
+  color: #f59f0a;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
