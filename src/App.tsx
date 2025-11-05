@@ -17,6 +17,7 @@ function App() {
       <section className='musicCardsComponents'>
           <h2>Repositorio de canciones</h2>
           <div className='musicCardsCont'>
+            <div className="musicCard"></div>
           </div>
       </section>
     </main>
