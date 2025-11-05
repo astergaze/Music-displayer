@@ -27,7 +27,7 @@ Este proyecto fue construido utilizando las siguientes tecnologías:
 
 ## Personas encargadas del proyecto
 
-* @astergaze (Thiago Martinez)
-* @lautaroif08 (Lautaro Fortuna)
-* @Shower143 (Joel Ninaja)
-* @benjamin091218 (Benjamin Gonzalez)
+* **[@astergaze](https://github.com/astergaze)** (Thiago Martinez)
+* **[@lautaroif08](https://github.com/lautaroif08)** (Lautaro Fortuna)
+* **[@Shower143](https://github.com/Shower143)** (Joel Ninaja)
+* **[@benjamin091218](https://github.com/benjamin091218)** (Benjamin Gonzalez) 
