@@ -6,39 +6,188 @@
   align-items: center;
   flex-direction: column;
   color: white;
-  position: relative; 
-}
-.landingFirst img {
-  width: 15rem;
-}
-.landingFirst p {
-  color: #f59f0a;
-}
-@keyframes moveUpDown {
-  0%, 100% {
-    transform: translate(-50%, 0);
+  position: relative;
+  img {
+    width: 15rem;
   }
-  50% {
-    transform: translate(-50%, 1rem); 
+
+  p {
+    color: #f59f0a;
   }
 }
 
-.mouse-animation {
+.landingFirst::after {
+  content: '';
   position: absolute;
-  bottom: 2rem; 
-  left: 50%;     
-  animation: moveUpDown 2s ease-in-out infinite;
-  width: 1rem; 
-  height: 3rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom,
+      transparent,
+      #1a1c37);
+}
+
+@keyframes bob-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.scroll-down-svg {
+  position: absolute;
+  bottom: 2rem;
+  height: 2rem;
+  z-index: 1;
   filter: brightness(0) invert(1);
+  animation: bob-animation 2s infinite ease-in-out;
 }
 
 .musicCardsComponents {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; 
   color: white;
   background-color: #1a1c37;
-  height: 100dvh;
+
+  height: 30dvh;
+}
+
+
+
+.musicCardsCont {
+  background-color: #1a1c37;
+  column-width: 15rem;
+  column-gap: 2rem;
+  padding: 2rem;
+}
+
+
+.songCard {
+  background: url('../assets/background-music-card.png') center/cover no-repeat;
+  background-color: #2a2d55;
+  border-radius: 12px;
+  transition: .3s ease;
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  width: 100%;
+  position: relative;
+  min-height: 25rem;
+  overflow: hidden;
+}
+
+.songCard:hover {
+  box-shadow: 0 0 40px rgba(129, 0, 129, 0.3);
+}
+
+.card-content-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 90%);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.songTitle {
+  color: #c16cff;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.player-controls-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  width: 100%;
+  z-index: 1;
+}
+
+.play-pause-btn-card {
+  background-color: #6aaeff;
+  color: #1a1c37;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.play-pause-btn-card:hover {
+  background-color: #9bc8ff;
+  /* Tu color */
+}
+
+.player-seek-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  gap: 0.25rem;
+}
+
+.progress-bar-card-container {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar-card-inner {
+  height: 100%;
+  background-color: #6aaeff;
+  /* Tu color */
+  border-radius: 3px;
+  transition: width 0.1s linear;
+  position: relative;
+}
+
+.progress-bar-card-inner::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.time-display-card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+}
+
+.songCard audio {
+  display: none;
 }
