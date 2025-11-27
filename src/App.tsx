@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './css/App.css';
 import logo from './assets/logo-azul.png';
 import Footer from './Footer.tsx';
